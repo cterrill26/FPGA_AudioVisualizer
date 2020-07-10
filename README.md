@@ -10,6 +10,8 @@ Open the twiddle_script.py file and edit **data_width** to the number of bits yo
 
 Similarly setting the **DATA_WIDTH** and **ADDR_WIDTH** parameters in DAV.v will cause these parameters to trickle down to the rest of the design units. Note that though much of the design units will adjust nicely based on these parameters, not everything will work immediately. Mainly, the interface between the FFT processor and the VGA generator requires **ADDR_WIDTH** to be an odd number (a small change needs to be made if **ADDR_WIDTH** is even), and the VGA generator output logic for VGA_R is hard coded to work for a 512-point DFT calculation. 
 
+Finally, use the Quartus Pin Planner to associate the top module's ports to physical pins on the FPGA.
+
 ## Overview
 I will write a more detailed design description when I get a chance. For now, I will provide a super brief description of what is going on. 
 
