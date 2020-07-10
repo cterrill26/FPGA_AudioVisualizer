@@ -21,6 +21,7 @@ def main():
         imag = -math.sin(2*math.pi*k/num_samples) * multiplier
         real = int(round(real))
         imag = int(round(imag))
+        
         if real < 0:
             real = real + 2 ** data_width
         elif real == multiplier:
@@ -28,9 +29,6 @@ def main():
 
         if imag < 0:
             imag = imag + 2 ** data_width
-
-        if imag == multiplier:
-            imag = multiplier + 1
         
         f_zeros.write(format(0, "0{}b".format(data_width)) + "\n")
         f_real.write(format(real, "0{}b".format(data_width)) + "\n")
